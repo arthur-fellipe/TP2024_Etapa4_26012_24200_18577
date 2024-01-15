@@ -1,0 +1,35 @@
+﻿@model IEnumerable<TP2024_Etapa4_26012_24200_18577.Models.MeioPagamento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoMeioPagamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoMeioPagamento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Mpid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Mpid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Mpid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

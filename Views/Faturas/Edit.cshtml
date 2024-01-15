@@ -1,0 +1,59 @@
+﻿@model TP2024_Etapa4_26012_24200_18577.Models.Fatura
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Fatura</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Fid" />
+            <div class="form-group">
+                <label asp-for="DataVencimento" class="control-label"></label>
+                <input asp-for="DataVencimento" class="form-control" />
+                <span asp-validation-for="DataVencimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorTotal" class="control-label"></label>
+                <input asp-for="ValorTotal" class="form-control" />
+                <span asp-validation-for="ValorTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataFatura" class="control-label"></label>
+                <input asp-for="DataFatura" class="form-control" />
+                <span asp-validation-for="DataFatura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoFaturaTfid" class="control-label"></label>
+                <select asp-for="TipoFaturaTfid" class="form-control" asp-items="ViewBag.TipoFaturaTfid"></select>
+                <span asp-validation-for="TipoFaturaTfid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContratoCid" class="control-label"></label>
+                <select asp-for="ContratoCid" class="form-control" asp-items="ViewBag.ContratoCid"></select>
+                <span asp-validation-for="ContratoCid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

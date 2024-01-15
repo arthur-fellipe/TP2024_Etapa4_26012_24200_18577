@@ -1,0 +1,69 @@
+﻿@model TP2024_Etapa4_26012_24200_18577.Models.Alojamento
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Alojamento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Aid" />
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkFotos" class="control-label"></label>
+                <input asp-for="LinkFotos" class="form-control" />
+                <span asp-validation-for="LinkFotos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkVideos" class="control-label"></label>
+                <input asp-for="LinkVideos" class="form-control" />
+                <span asp-validation-for="LinkVideos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoradaMid" class="control-label"></label>
+                <select asp-for="MoradaMid" class="form-control" asp-items="ViewBag.MoradaMid"></select>
+                <span asp-validation-for="MoradaMid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CondicoesContratuaisCcid" class="control-label"></label>
+                <select asp-for="CondicoesContratuaisCcid" class="form-control" asp-items="ViewBag.CondicoesContratuaisCcid"></select>
+                <span asp-validation-for="CondicoesContratuaisCcid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoAlojamentoTaid" class="control-label"></label>
+                <select asp-for="TipoAlojamentoTaid" class="form-control" asp-items="ViewBag.TipoAlojamentoTaid"></select>
+                <span asp-validation-for="TipoAlojamentoTaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoResidenciaTrid" class="control-label"></label>
+                <select asp-for="TipoResidenciaTrid" class="form-control" asp-items="ViewBag.TipoResidenciaTrid"></select>
+                <span asp-validation-for="TipoResidenciaTrid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UtilizadorUid" class="control-label"></label>
+                <select asp-for="UtilizadorUid" class="form-control" asp-items="ViewBag.UtilizadorUid"></select>
+                <span asp-validation-for="UtilizadorUid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

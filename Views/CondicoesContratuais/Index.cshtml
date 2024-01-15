@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TP2024_Etapa4_26012_24200_18577.Models.CondicoesContratuai>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorRenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DespesasInclusas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VisitasPermitidas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorCaucao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorRenda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DespesasInclusas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VisitasPermitidas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorCaucao)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Ccid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Ccid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Ccid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
